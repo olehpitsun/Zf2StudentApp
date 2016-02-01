@@ -21,18 +21,22 @@ class AlbumForm extends Form
             'name' => 'artist',
             'attributes' => array(
                 'type'  => 'text',
+                'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Artist',
+                'label' => 'Автор',
+                'class' => 'control-label',
             ),
         ));
         $this->add(array(
             'name' => 'title',
             'attributes' => array(
                 'type'  => 'text',
+                'class' => 'form-control',
             ),
             'options' => array(
-                'label' => 'Title',
+                'label' => 'Назва',
+                'class' => 'control-label',
             ),
         ));
         $this->add(array(
@@ -41,6 +45,7 @@ class AlbumForm extends Form
                 'type'  => 'submit',
                 'value' => 'Go',
                 'id' => 'submitbutton',
+                'class'=> 'btn btn-primary',
             ),
         ));
     }

@@ -1,13 +1,13 @@
 <?php
 // module/Album/view/album/album/delete.phtml:
 
-$title = 'Delete album';
+$title = 'Видалити альбом';
 $this->headTitle($title);
 ?>
 <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-<p>Are you sure that you want to delete
-    '<?php echo $this->escapeHtml($album->title); ?>' by
+<p>Ви справді бажаєте видалити альбом
+    '<?php echo $this->escapeHtml($album->title); ?>' від
     '<?php echo $this->escapeHtml($album->artist); ?>'?
 </p>
 <?php
@@ -19,7 +19,7 @@ $url = $this->url('album', array(
 <form action="<?php echo $url; ?>" method="post">
 <div>
     <input type="hidden" name="id" value="<?php echo (int) $album->id; ?>" />
-    <input type="submit" name="del" value="Yes" />
-    <input type="submit" name="del" value="No" />
+    <input type="submit" name="del" class="btn btn-success" value="Yes" />
+    <input type="submit" name="del" class="btn btn-warning" value="No" />
 </div>
 </form>
