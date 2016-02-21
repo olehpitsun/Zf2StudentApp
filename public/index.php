@@ -1,7 +1,7 @@
 <?php
 /**
  * This makes our life easier when dealing with paths. Everything is relative
- * to the application root now.
+ * to the Authentification root now.
  */
 chdir(dirname(__DIR__));
 
@@ -17,5 +17,5 @@ if (php_sapi_name() === 'cli-server') {
 // Setup autoloading
 require 'init_autoloader.php';
 
-// Run the application!
+// Run the Authentification!
 Zend\Mvc\Application::init(require 'config/application.config.php')->run();
