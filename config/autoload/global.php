@@ -25,6 +25,20 @@ return array(
         'username'       => 'root',
         'password'       => 'oleh123'
     ),
+    'doctrine' => array(
+        'connection' => array(
+            'orm_default' => array(
+                'driverClass' => 'Doctrine\DBAL\Driver\PDOMySql\Driver',
+                'params' => array(
+                    'host'     => 'localhost',
+                    'port'     => '3306',
+                    'user'     => 'root',
+                    'password' => 'oleh123',
+                    'dbname'   => 'zf',
+                )
+            )
+        )
+    ),
     'service_manager' => array(
         'factories' => array(
             'Zend\Db\Adapter\Adapter'

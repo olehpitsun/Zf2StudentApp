@@ -1,16 +1,21 @@
 <?php
-// module/Album/src/Album/Form/AlbumForm.php:
 namespace Album\Form;
-
 use Zend\Form\Form;
-
 class AlbumForm extends Form
 {
     public function __construct($name = null)
     {
         // we want to ignore the name passed
         parent::__construct('album');
-        $this->setAttribute('method', 'post');
+        $this->setAttributes(array(
+            'method', 'post',
+            'data-toggle','validator'
+            ));
+        //$this->setAttribute('data-toggle','validator');
+
+
+
+
         $this->add(array(
             'name' => 'id',
             'attributes' => array(
@@ -22,10 +27,16 @@ class AlbumForm extends Form
             'attributes' => array(
                 'type'  => 'text',
                 'class' => 'form-control',
+                'pattern' => '^[_A15,-z0-9]{1,}$',
+                'maxlength' => 15,
+                'data-minlength' => "6",
+
             ),
             'options' => array(
                 'label' => 'Автор',
                 'class' => 'control-label',
+                'for' => 'artist'
+
             ),
         ));
         $this->add(array(
@@ -33,10 +44,19 @@ class AlbumForm extends Form
             'attributes' => array(
                 'type'  => 'text',
                 'class' => 'form-control',
+                'pattern' => '^[_A-z0-9]{1,}$',
+                'maxlength' => 15,
+                'data-minlength' => "6",
+
+
             ),
             'options' => array(
                 'label' => 'Назва',
                 'class' => 'control-label',
+                'for' => 'title'
+
+
+
             ),
         ));
         $this->add(array(
@@ -45,7 +65,7 @@ class AlbumForm extends Form
                 'type'  => 'submit',
                 'value' => 'Go',
                 'id' => 'submitbutton',
-                'class'=> 'btn btn-primary',
+                'class' => 'btn btn-primary',
             ),
         ));
     }

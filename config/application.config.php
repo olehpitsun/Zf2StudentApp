@@ -8,10 +8,24 @@
 return array(
     // This should be an array of module namespaces used in the application.
     'modules' => array(
+
         'Application',
+        'DoctrineModule',
+        'DoctrineORMModule',
+        'ZfcBase',
+        'ZfcUser',
+        //'ZfcUserDoctrineORM',
+        //'BjyAuthorize',
         'Album',
         'StickyNotes',
         'Auth',
+        //'CsnUser',
+        //'SamUser',
+        //'MyUser',
+
+
+        //'ZF2AuthAcl',
+        //'MyBlog',
         //'AuthDoctrine',
     ),
 
