@@ -10,18 +10,21 @@ return array(
     'modules' => array(
 
         'Application',
+        'Album',
+
         'DoctrineModule',
         'DoctrineORMModule',
         'ZfcBase',
         'ZfcUser',
         //'ZfcUserDoctrineORM',
         //'BjyAuthorize',
-        'Album',
+        //'ImageGallery',
         'StickyNotes',
         'Auth',
         //'CsnUser',
         //'SamUser',
         //'MyUser',
+        'ImageGallery',
 
 
         //'ZF2AuthAcl',

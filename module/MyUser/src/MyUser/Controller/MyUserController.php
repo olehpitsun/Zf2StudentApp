@@ -47,7 +47,7 @@ class MyUserController extends AbstractActionController
                 $this->getAlbumTable()->saveAlbum($album);
 
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('album');
+                return $this->redirect()->toRoute('ImageGallery');
             }
         }
         return array('form' => $form);
@@ -57,7 +57,7 @@ class MyUserController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('album', array(
+            return $this->redirect()->toRoute('ImageGallery', array(
                 'action' => 'add'
             ));
         }
@@ -76,7 +76,7 @@ class MyUserController extends AbstractActionController
                 $this->getAlbumTable()->saveAlbum($form->getData());
 
                 // Redirect to list of albums
-                return $this->redirect()->toRoute('album');
+                return $this->redirect()->toRoute('ImageGallery');
             }
         }
 
@@ -90,7 +90,7 @@ class MyUserController extends AbstractActionController
     {
         $id = (int) $this->params()->fromRoute('id', 0);
         if (!$id) {
-            return $this->redirect()->toRoute('album');
+            return $this->redirect()->toRoute('ImageGallery');
         }
 
         $request = $this->getRequest();
@@ -103,12 +103,12 @@ class MyUserController extends AbstractActionController
             }
 
             // Redirect to list of albums
-            return $this->redirect()->toRoute('album');
+            return $this->redirect()->toRoute('ImageGallery');
         }
 
         return array(
             'id'    => $id,
-            'album' => $this->getAlbumTable()->getAlbum($id)
+            'ImageGallery' => $this->getAlbumTable()->getAlbum($id)
         );
     }
 
@@ -116,7 +116,7 @@ class MyUserController extends AbstractActionController
     {
         if (!$this->albumTable) {
             $sm = $this->getServiceLocator();
-            $this->albumTable = $sm->get('Album\Model\AlbumTable');
+            $this->albumTable = $sm->get('ImageGallery\Model\AlbumTable');
         }
         return $this->albumTable;
     }
