@@ -3,13 +3,45 @@ $title = 'Add new album';
 $this->headTitle($title);
 ?>
     <h1><?php echo $this->escapeHtml($title); ?></h1>
-<?php
-$form = $this->form;
-$form->setAttribute('action', $this->url('album', array('action' => 'add')));
-$form->prepare();
-echo $this->form()->openTag($form) . PHP_EOL;
-echo $this->formHidden($form->get('id')) . PHP_EOL;
-echo $this->formRow($form->get('title')) . PHP_EOL;
-echo $this->formRow($form->get('artist')) . PHP_EOL;
-echo $this->formInput($form->get('submit')) . PHP_EOL;
-echo $this->form()->closeTag($form) . PHP_EOL;
+    <div class="col-lg-9">
+        <div class="demo-box">
+            <div class="col-lg-4">
+                <?php
+                $form = $this->form;
+                $form->setAttribute('action', $this->url('album', array('action' => 'add')));
+                $form->prepare();
+                echo $this->form()->openTag($form) . PHP_EOL;
+                echo $this->formHidden($form->get('id')) . PHP_EOL;?>
+                <div class="form-group">
+                    <?php
+                echo $this->formRow($form->get('title')) . PHP_EOL;?>
+                    </div>
+                <div class="form-group"><?php
+                echo $this->formRow($form->get('artist')) . PHP_EOL;?>
+                    </div><?php
+                echo $this->formInput($form->get('submit')) . PHP_EOL;
+
+
+
+echo
+$this->add([
+    'type' => 'Zend\Form\Element\Captcha',
+    'name' => 'captcha',
+    'options' => [
+        'label' => 'Please verify you are human.',
+        'captcha' => [
+            'class'   => 'Image',
+            'options' => [
+                'font' => __DIR__ . '/../assets/fonts/arial.ttf',
+                'width' => 200,
+                'height' => 100,
+                'dotNoiseLevel' => 40,
+                'lineNoiseLevel' => 3,
+                'imgDir' => '/path/to/image/captcha/will/be/generated'
+            ],
+        ],
+    ],
+]);
+
+                echo $this->form()->closeTag($form) . PHP_EOL;
+

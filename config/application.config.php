@@ -18,7 +18,17 @@ return array(
         //'BjyAuthorize',
         'Album',
         'StickyNotes',
-        'Auth',
+        'LearnZF2Ajax',
+        'LearnZF2AjaxImageGallery',
+
+        'ZF2FileUploadExamples',
+
+        //'learn-zf2-authentication',
+        //'learn-zf2-acl',
+        //'StickyNotes',
+        //'Auth',
+        //'TestAjax',
+        //'StickyNotes',
         //'CsnUser',
         //'SamUser',
         //'MyUser',
