@@ -12,6 +12,7 @@ return array(
         'Application',
         'Album',
 
+        'LearnZF2Ajax',
         'DoctrineModule',
         'DoctrineORMModule',
         'ZfcBase',
